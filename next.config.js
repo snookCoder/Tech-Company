@@ -1,9 +1,15 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  server: {
-    port: process.env.PORT || 3000, // Use Render's PORT or default to 3000
+  images: {
+    domains: ["localhost"],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "cdn.sanity.io",
+        port: "",
+      },
+    ],
   },
-  reactStrictMode: true,
 };
 
 module.exports = nextConfig;
